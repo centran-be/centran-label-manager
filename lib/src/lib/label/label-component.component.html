@@ -1,5 +1,5 @@
 <span (contextmenu)="onEdit(); false">
-  <span *ngIf="labelValue | async" [innerHTML]="labelValue | async"></span>
+  <span *ngIf="labelValue | async" [innerHTML]="getLabelValue() | async"></span>
   <span *ngIf="!(label | async)" class="undefinedLabel">{{key}}</span>
   <span *ngIf="labelHelp  | async"><i class="fa fa-info-circle" aria-hidden="true" tooltip="{{labelHelp | async}}"></i></span>
 </span>
