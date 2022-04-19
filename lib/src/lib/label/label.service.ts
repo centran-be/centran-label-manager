@@ -3,7 +3,7 @@ import {LabelConfig} from "./label.config";
 import {BehaviorSubject} from "rxjs";
 import {Subject} from "rxjs/Subject";
 import {Observable} from "rxjs/Observable";
-import {ajax} from "rxjs/observable/dom/ajax";
+import {ajax} from 'rxjs/observable/dom/ajax';
 
 
 export class Label {
@@ -14,21 +14,20 @@ export class Label {
 @Injectable()
 export class LabelService {
 
-    private labels: Subject<Label[]> = new BehaviorSubject([])
-    private loaded: boolean = false;
-    private _showKeys: boolean = false;
+    private labels: Subject<Label[]> = new BehaviorSubject([]);
+    private loaded = false;
+    private _showKeys = false;
 
     public lang: BehaviorSubject<string>;
 
     constructor(@Inject('config') public config: LabelConfig) {
-        this.lang = new BehaviorSubject<string>(this.languages[0])
-
+        this.lang = new BehaviorSubject<string>(this.languages[0]);
         this.lang.concatMap(l => {
             let get$ = ajax({
                 url: this.labelSourceUrl + this.urlPrefix + l + this.urlSuffix,
-                method:'GET'
+                method: 'GET'
             }).map(e => e.response);
-            return get$.toPromise()
+            return get$.toPromise();
         })
             .map((res: Promise<any>) => res)
             .map((res: any) => {
