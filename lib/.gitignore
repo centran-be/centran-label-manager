@@ -1,6 +1,0 @@
-/.idea
-node_modules
-out-tsc
-dist
-src/**/*.js
-src/**/*.map

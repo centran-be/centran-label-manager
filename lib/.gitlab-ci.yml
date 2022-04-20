@@ -1,9 +1,0 @@
-stages:
-  - lint
-
-lint:
-  stage: lint
-  tags:
-    - docker
-  script:
-    - ./lint.bash

@@ -1,0 +1,14 @@
+{
+  "name": "@centran/centran-label-manager",
+  "version": "3.0.0",
+  "peerDependencies": {
+    "@angular/common": "^9.1.13",
+    "@angular/core": "^9.1.13",
+    "@angular/forms": "^9.1.13"
+  },
+  "dependencies": {
+    "ngx-bootstrap": "^6.0.0",
+    "ngx-pagination": "^5.1.1",
+    "tslib": "^1.10.0"
+  }
+}
